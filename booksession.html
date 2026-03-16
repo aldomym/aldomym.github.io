@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  max-height:260px;
+  text-align: center;
+  font-family: arial;
+  transform:translate(280px,5px);
+  margin:20px;
+}
+
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  max-height:260px;
+  text-align: center;
+  font-family: arial;
+  transform:translate(-7px,5px);
+  margin:20px;
+}
+
+.button {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  top: 40px;
+  right: 510px;
+  transform: translate(-20px, -5px);
+}
+
+.button:hover {
+  background-color: black;
+  color:white;
+}
+
+.container {
+  display: grid;
+ align-items: center; 
+ grid-template-columns: 1fr 1fr 1fr;
+ column-gap: 5px;
+}
+
+.box {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+
+}
+
+.box span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  transform:translate(-30px,60px);
+}
+
+li {
+  padding: 5px;
+}
+
+.bgr{
+  width: 340px;
+  height: 85px;
+  background: black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+  border-radius: 10px;
+  padding:3px;
+}
+
+img {
+  max-width: 300%;
+  max-height:100%;
+  align-content: last baseline
+}
+
+.topnav {
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+  font-size: 33px;
+  display: flex;
+  justify-content: end;
+  display: inline;
+}
+
+#navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+  border: 4px solid black;
+  border-radius: 12px;
+  transition: top 0.3s;
+}
+
+#navbar a:hover {
+background-color:black;  
+color:white;
+}
+
+.topnav a.active {
+  background-color: #000000;
+}
+
+
+</style>
+</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+<title>Book a lesson</title>
+  <head>
+  <link rel="stylesheet" href="style.ccs">
+  <div id="navbar" class="topnav">
+  <a href="test.html">Home</a>
+  <a href="anout.html">About</a>
+  <a href="contact.html">Send me a message</a>
+  <a class="active"; href="booksession.html;" style="color:white; font-family: 'Helvetica';">Book a session</a>
+  </div>
+<div class="bgr">
+    <h1 style="font-size:58px; font-family:'Helvetica'; color:white;">
+      Smart STEM
+    </h1>
+  </div>
+  <div class="card">
+  <h1 style="font-family:'courier'">1 hour long High School math lesson</h1>
+  <p style="font-size:32px; font-family:'Helvetica'; color:black">$49.99</p>
+  <p style="text-align:center; font-size:24px;"></p>
+  <div class="button1", id="btnHolder">
+    <button><p style="font-size:24px">Book</p>
+    </div>
+  <div class="card1">
+  <h1 style="font-family:'courier'">1 hour long Undergraduate  math lesson</h1>
+  <p style="font-size:32px; font-family:'Helvetica'; color:black">$59.99</p>
+  <p style="text-align:center; font-size:24px;"></p>
+  <div class="button1", id="btnHolder">
+    <button><p style="font-size:24px">Book</p>
+    </div>
+</div>
+<p style="text-align: center;">Prices are in US dollars</p>
+<p style="text-align: center;">Exchange rate fees may apply</p>
+<h1 style="text-align: center; font-family:'Courier'">My lessons</h1>
+<p style="text-align: center; font-size:24px; font-family:'Helvetica';">I use a simple and straightforward methdodology in my lessons: a conversational one. This means I ask the student what do they need help with, they explain me what they are struggling with and I keep explaining them until they finally grasp the lessons. I keep making questions, and explaining them in the most ways I possibly can.</p>
+<ul>
+    <li><a href="mailto:aldon2004@hotmail.com" style="font-size:18px";> Send me an email </a></li>
+    <li><a href="www.linkedin.com/in/aldo-mayme-martinez" style="font-size:18px";> Linkedin </a></li>
+    <li><a href="https://www.reddit.com/user/Glittering_Report_82/" style="font-size:18px";>Reddit</a></li>
+    <li><a>©2026, Aldo Mayme</a><li>
+    <li><a>No AI was used during the coding of this website</a><li>
+</ul>
+</html>
