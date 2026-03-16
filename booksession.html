@@ -28,6 +28,10 @@ body {
   margin:20px;
 }
 
+.ulmobile{
+  display:none;
+}
+
 .button {
   background-color: white;
   border: 2px solid black;
@@ -132,6 +136,87 @@ color:white;
   background-color: #000000;
 }
 
+.mbutton1{
+  display:none;
+}
+
+.mbutton2{
+  display:none;
+}
+
+@media screen and (max-width:800px){
+
+body{
+  transform:translateX(-300px);
+}
+
+.topnav{
+  width:100%;
+}
+
+.ulmobile{
+  list-style-type: none;
+  display: flex;
+}
+
+.mposition{
+  transform:translateY(-30px);
+}
+
+b{
+  font-size:1.4rem;
+  margin:1.2rem;
+  padding:0%;
+}
+
+ul{
+  flex-direction:row;
+  justify-content:space-between;
+}
+
+  p{
+    width:100%;
+    height:680px;
+    font-size:10px;
+    transform:translate(0px,-30px);
+  }
+  img{
+    display:none;
+  }
+
+.bgr  {
+  display:none;
+}
+  .container{
+  flex-direction: column;
+  }
+.mobileHeader{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  } 
+.button{
+  display:none;
+}
+
+.mbutton1{
+  display:block;
+  transform:translateY(-680px);
+}
+
+.mbutton2{
+  display:block;
+  transform:translateY(-65px);
+}
+
+.button1{
+display:none;
+}
+#navbar{
+ display:none;
+}
+
+}
 
 </style>
 </div>
@@ -144,7 +229,7 @@ color:white;
   <head>
   <link rel="stylesheet" href="style.ccs">
   <div id="navbar" class="topnav">
-  <a href="index.html">Home</a>
+  <a href="test.html">Home</a>
   <a href="anout.html">About</a>
   <a href="contact.html">Send me a message</a>
   <a class="active"; href="booksession.html;" style="color:white; font-family: 'Helvetica';">Book a session</a>
@@ -155,15 +240,21 @@ color:white;
     </h1>
   </div>
   <div class="card">
-  <h1 style="font-family:'courier'">1 hour long High School math lesson</h1>
+  <h1 style="font-family:'courier'"><b>1 hour long High School math lesson</b></h1>
   <p style="font-size:32px; font-family:'Helvetica'; color:black">$49.99</p>
   <p style="text-align:center; font-size:24px;"></p>
   <div class="button1", id="btnHolder">
     <button><p style="font-size:24px">Book</p>
     </div>
+    <div class="mbutton2">
+    <input type=button href="zoom.com" value="Book">
+  </div>
   <div class="card1">
-  <h1 style="font-family:'courier'">1 hour long Undergraduate  math lesson</h1>
+  <h1 style="font-family:'courier'"><b>1 hour long Undergraduate  math lesson</b></h1>
   <p style="font-size:32px; font-family:'Helvetica'; color:black">$59.99</p>
+  <div class="mbutton1">
+    <input type=button href="zoom.com" value="Book">
+  </div>
   <p style="text-align:center; font-size:24px;"></p>
   <div class="button1", id="btnHolder">
     <button><p style="font-size:24px">Book</p>
@@ -171,8 +262,18 @@ color:white;
 </div>
 <p style="text-align: center;">Prices are in US dollars</p>
 <p style="text-align: center;">Exchange rate fees may apply</p>
-<h1 style="text-align: center; font-family:'Courier'">My lessons</h1>
+<div class="mposition">
+<h1 style="text-align: center; font-family:'Courier'"><b>My lessons</b></h1>
+</div>
 <p style="text-align: center; font-size:24px; font-family:'Helvetica';">I use a simple and straightforward methdodology in my lessons: a conversational one. This means I ask the student what do they need help with, they explain me what they are struggling with and I keep explaining them until they finally grasp the lessons. I keep making questions, and explaining them in the most ways I possibly can.</p>
+<div class="ulmobile">
+  <ul>
+  <li><ahref="index.html" style=" font-family: 'Helvetica';";>Home</a><li>
+  <li><a href="about.html" style="font-family: 'Helvetica';">About</a></li>
+  <li><a href="contact.html" style="font-family: 'Helvetica';">Send me a message</a></li>
+  <li><a href="booksession.html" style="font-family: 'Helvetica';">Book a lesson</a></li>
+  </ul>
+</div>
 <ul>
     <li><a href="mailto:aldon2004@hotmail.com" style="font-size:18px";> Send me an email </a></li>
     <li><a href="www.linkedin.com/in/aldo-mayme-martinez" style="font-size:18px";> Linkedin </a></li>
