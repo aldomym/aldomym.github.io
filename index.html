@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <style>
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   padding-bottom: 50px;
   overflow-x: hidden;
+  background-color: rgb(48, 47, 47) !important;
 }
 
-.button {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+.foot{
+  background-color: grey;
+  transform:translateY(100px);
+  width: 100%;
+  height: 100px;
+}
+
+a.button {
+  background: #0d6efd;
+  border: none;
+  border-radius:8px;
+  color: white;
   padding: 15px 32px;
+  width:200px;
+  height:70px;
+  margin: 20px;
   text-align: center;
   text-decoration: none;
   display: block;
   font-size: 16px;
+  position:inherit;
   cursor: pointer;
-  position: relative;
   float: right;
   top: 40px;
   right: 510px;
-  transform: translate(-20px, -5px);
+  border: gold 2px solid;
+  font-style:bold;
 }
 
 .hamburger {
@@ -38,12 +53,70 @@ body {
   z-index: 1100;
 }
 
+.bigcontainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.bigcontainer1, .bigcontainer2, .bigcontainer3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.glasscontainer{
+  height:160px;
+  width:1000px;
+  border-radius: 30px;
+  background-color: rgba(11, 157, 194, 0.345);
+  backdrop-filter: blur(100px);
+  margin:20px;
+  border: 2px white solid;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.3s ease;
+
+}
+
+.contain{
+  position:relative;
+  transition: all 0.3s ease;
+}
+
+.contain:hover {
+  transform: scale(1.05) rotate(0deg) translate(0px, -5px) skewX(0deg);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  filter: brightness(1);
+  border-radius:100%;
+}
+
+.textimage{
+position: absolute;
+  bottom: 20px;
+  right: 120px;
+  width: 70px;
+  background: linear-gradient(45deg, grey, black);
+  color: orange;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 18px;
+  border: orange solid 2px;
+}
+
 .mbutton {
   display: none;
 }
 
 .button:hover {
-  background-color: black;
+  background-color: #0b5ed7;
   color: white;
 }
 
@@ -52,6 +125,15 @@ body {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 5px;
+}
+
+.glasscontainer:hover {
+  transform: scale(1.05) rotate(0deg) translate(0px, -5px) skewX(0deg);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  filter: brightness(1);
+  background-color: rgba(11, 157, 194, 0.712);;
+  color: #ffffff;
 }
 
 .box {
@@ -69,16 +151,21 @@ body {
   margin-right: 15px;
 }
 
+.subjectcards{
+  display:flex;
+  flex-direction:row;
+}
+
 p {
   position: relative;
   width: 1000px;
   height: 200px;
-  border: 2px solid black;
-  border-radius: 12px;
   padding: 10px;
   margin: 10px;
   top: 60px;
   right: 0px;
+  color:white;
+  flex:4;
 }
 
 ul {
@@ -92,9 +179,9 @@ li {
 }
 
 .bgr {
-  width: 340px;
-  height: 85px;
-  background: black;
+  width: 360px;
+  height: 65px;
+  background: linear-gradient(30deg, cyan,blue);
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
   border-radius: 10px;
   padding: 3px;
@@ -108,14 +195,15 @@ img {
   align-content: last baseline;
 }
 
+
 .topnav {
-  background-color: #f8f8f8;
+  background-color: white;
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #000000;
+  color: white;
   text-align: center;
   padding: 14px 10px;
   text-decoration: none;
@@ -135,29 +223,35 @@ img {
   margin: 10px;
 }
 
+.buttonconsult{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
 #navbar {
   position: sticky;
   top: 0;
   right: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
-  border: 4px solid black;
-  border-radius: 12px;
+  border: white 1px solid;
+  border-radius: 32px;
   transition: top 0.3s;
-  margin: 10px;
-  width: 780px;
+  margin-left: 340px;
+  width: 500px;
   overflow: hidden;
-  background-color: white;
-  transform: translateX(160px);
+  background-color: grey;
   z-index: 1000;
 }
 
 #navbar a:hover {
-  background-color: black;
+  background-color: #0b5ed7;
   color: white;
+  border-radius:30px;
+  transition:0.3ms;
 }
 
 .topnav a.active {
-  background-color: #000000;
+  background-color: #0b5ed7;
 }
 
 #a {
@@ -175,8 +269,7 @@ img {
   flex-direction: column;
   background-color: white;
   border: 3px solid black;
-  border-radius: 10px;
-  margin: 0 10px;
+  margin: 0px;
   overflow: hidden;
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -189,7 +282,7 @@ img {
   color: black;
   font-family: 'Helvetica', sans-serif;
   font-size: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 3px solid #eee;
   transition: background-color 0.2s;
 }
 
@@ -204,84 +297,44 @@ img {
 
 .mobile-menu.open {
   display: flex;
-}
-
-.ulmobile {
-  display: none;
-}
+} 
 
 #header {
   display: flex;
   align-items: center;
   position: sticky;
+  width:100%;
   top: 0;
   z-index: 1000;
-  background-color: white;
+  border-bottom:1px rgb(202, 202, 202) solid;
+  background-color: rgba(75, 74, 74, 0.362);
+  backdrop-filter: blur(100px);
   padding: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   body {
     overflow-x: hidden;
   }
 
-  .topnav {
+  #header {
+    transform: none;
     width: 100%;
-  }
-
-  .ulmobile {
-    list-style-type: none;
-    display: flex;
-  }
-
-  b {
-    font-size: 1.8rem;
-    margin: 1.2rem;
-    padding: 0%;
-  }
-
-  ul {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  p {
-    width: 95%;
-    height: 620px;
-    font-size: 24px !important;
-    transform: translate(0px, -40px);
-  }
-
-  img {
-    display: none;
+    box-sizing: border-box;
   }
 
   .bgr {
     width: auto;
+    flex-shrink: 1;
+    min-width: 0;
     height: 60px;
     padding: 4px 10px;
+    margin: 6px;
   }
 
   .bgr h1 {
-    font-size: 36px !important;
-  }
-
-  .container {
-    flex-direction: column;
-  }
-
-  .button {
-    display: none;
-  }
-
-  .mposition {
-    transform: translateY(140px);
-  }
-
-  .box {
-    width: 95%;
-    transform: translateX(10px);
+    font-size: 22px !important;
+    white-space: nowrap;
   }
 
   #navbar {
@@ -290,70 +343,262 @@ img {
 
   .hamburger {
     display: block;
+    color: white;
+  }
+
+.bigcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient();
+  }
+
+  .bigcontainer1,
+  .bigcontainer2,
+  .bigcontainer3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .glasscontainer {
+    width: calc(100% - 24px);
+    height: auto;
+    margin: 12px auto;
+    box-sizing: border-box;
+  }
+
+  p {
+    position: static;
+    width: 100%;
+    height: auto;
+    font-size: 17px !important;
+    padding: 10px;
+    margin: 0;
+    top: unset;
+    transform: none;
+  }
+
+  img {
+    display: block;
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 50%;
+    margin: 12px auto;
+  }
+
+  .contain {
+    margin: 0 auto;
+  }
+
+  .textimage {
+    display: none;
+  }
+
+  a.button {
+    display: none;
+  }
+
+  .buttonconsult a.button {
+    display: block;
+    float: none;
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+    margin: 16px auto;
+    padding: 16px 20px;
+    font-size: 17px;
+    position: static;
+  }
+
+  .mposition {
+    width: 100%;
+    transform: none;
+  }
+
+  .mposition h1 {
+    font-size: 28px !important;
+    text-align: center;
+  }
+
+  .mposition1 {
+    transform: none;
+    width: 100%;
+  }
+
+  .subjectcards {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .color-box {
+    width: calc(100% - 24px) !important;
+    margin: 8px auto !important;
+    box-sizing: border-box;
+  }
+
+  .testmposition {
+    transform: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .testmposition h1 {
+    font-size: 36px !important;
+  }
+
+  .box {
+    width: calc(100% - 32px);
+    transform: none;
+    margin: 12px auto;
+    box-sizing: border-box;
+  }
+
+  .buttonconsult {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .buttonconsult h1 {
+    font-size: 36px !important;
+  }
+
+  .buttonconsult h2 {
+    font-size: 18px !important;
+    text-align: center;
+  }
+
+  .foot {
+    transform: none;
+    height: auto;
+    padding: 16px 0;
+    margin-top: 20px;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    transform: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 6px 0;
+    text-align: center;
+  }
+
+  h1.hero-title {
+    font-size: 36px !important;
   }
 }
 </style>
-  <title>Smart STEM</title>
+  <title>Smart STEM Tutor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="header">
     <div class="bgr">
       <a href="index.html" style="color:white;">
-        <h1 style="font-size:58px; font-family:'Helvetica'; color:white;">Smart STEM</h1>
+        <h1 style="font-size:42px; font-family:'Roboto'; color:white;">Smart STEM Tutor</h1>
       </a>
     </div>
+    <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    English
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="index-es.html">Español</a></li>
+  </ul>
+</div>
     <div id="navbar" class="topnav">
-      <a class="active" href="index.html" style="color:white; font-family:'Helvetica';">Home</a>
-      <a href="about.html" style="font-family:'Helvetica';">About</a>
-      <a href="contact.html" style="font-family:'Helvetica';">Send me a message</a>
-      <a href="booksession.html" style="font-family:'Helvetica';">Book a lesson</a>
+      <a class="active" href="index.html" style="color:white; font-family:'Helvetica'; font-size:20px; border-radius: 30px;"><b>Home</b></a>
+      <a href="about.html" style="font-family:'Helvetica'; font-size:20px;">About</a>
+      <a href="contact.html" style="font-family:'Helvetica'; font-size:20px;">Send me a message</a>
+      <a href="booksession.html" style="font-family:'Helvetica'; font-size:20px;">Book a lesson</a>
     </div>
-    <!-- Hamburger button (mobile only) -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name    = "color-scheme"
+    content = "light dark">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   </div>
 
-  <!-- Mobile dropdown menu (below header) -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Send me a message</a>
     <a href="booksession.html">Book a lesson</a>
   </div>
-
-  <h1 style="text-align: center; font-family:'Courier'; font-size:54px; transform:translate(0px,32px);"><b>Take full advantage of your potential!</b></h1>
-  <div>
-    <p style="text-align: center; font-family: 'Helvetica'; font-size:28px;">Improve your learning outcomes with Aldo, an expert STEM educator with many years of online tutoring experience to students from all over America!
+  <h1 style="text-align: left; font-family:'Roboto'; font-size:64px; margin:12px; color:white;"><b>Take <a style="color:cyan">full advantage</a> of your potential!</b></h1>
+ <div class="bigcontainer">
+<div class="glasscontainer">
+  <br/>
+    <p style="text-align: justify; font-family: 'Helvetica'; font-size:22px; margin:13px; transform:translateY(-30px);">Improve your learning outcomes with Aldo, an expert STEM educator with many years of online tutoring experience to students from all over America!
     <br/>
     With my extreme patience and ability to tailor to diverse learning styles, I'll help you master science and mathematics with very clear and concise explanations</p>
+     </div>
+  <div class="contain">
+  <img src="IMG_20231222_141252.jpg" width="188" height="250" style="border-radius:100%;">
+  <div class="textimage">
+    <h1 style="font-size:14px;"><b>2+ yrs exp</b></h1>
   </div>
-  <img src="IMG_20231222_141252.jpg" width="188" height="250" style="transform: translate(1070px,-180px); border-radius:8px;">
-  <h1 style="font-size:18px; transform:translate(1060px,-180px); font-family:'Helvetica'">I have a BSc in Mathematics,
-  <br/>plus 2 years of online tutoring
-  <br/>experience</h1>
+  </div>
+  </div>
+  <a href="https://calendly.com/aldon2004/new-meeting" class="button">Book a free consultation</a>
+  <hr>
+  <div class="">
+  <div class="bigcontainer1">
   <div class="mposition">
-    <h1 style="text-align:center; font-family:'Courier'; font-size:58px; transform:translate(0px,-180px)"><b>Subjects I have expertise in include:</b></h1>
+    <h1 style="text-align:center; font-family:'Roboto'; font-size:48px; color:white;"><b>Subjects I have expertise in include:</b></h1>
     <hr>
-  </div>
-  <div class="color-box" style="background-color: #000000; margin:10px; border-radius:8px; transform:translateY(-80px);">
-    <div class="container">
-      <dl style="font-size:24px; color:#ffffff; font-family:Verdana, Geneva, Tahoma, sans-serif">
-        <dt style="font-family:'courier'">Physics</dt>
-        <dd>•AP Physics 1,2,3</dd>
-        <dd>•AP Physics C: Mechanics</dd>
-        <dd>•AP Physics C: Electricity and Magnetism</dd>
-        <dd>•Classical Mechanics</dd>
-        <dd>•Quantum Mechanics</dd>
-        <dd>•Computational physics</dd>
+  <div class="mposition1">
+    <div class="subjectcards"; style="align-content:center;">
+  <div class="color-box" style="margin-left:240px; margin-right:20px; border-radius:8px; justify-content:center !important; transform:translateY(-10px); backdrop-filter:blur(40px); width:300px; background:linear-gradient(90deg, rgb(244, 107, 105), rgb(255, 0, 0));">
+    <div class="container" style="text-align:center";>
+      <dl style="color:#ffffff;">
+        <dt style="font-family:'Roboto'; font-size:32px;">Physics</dt>
+        <dd style="font-size:20px;">•AP Physics 1,2,3</dd>
+        <dd style="font-size:20px;">•AP Physics C: Mechanics</dd>
+        <dd style="font-size:20px;">•AP Physics C: Electricity and Magnetism</dd>
+        <dd style="font-size:20px;">•Classical Mechanics</dd>
+        <dd style="font-size:20px;">•Quantum Mechanics</dd>
+        <dd style="font-size:20px;">•Computational physics</dd>
       </dl>
-      <img src="https://panolam.com/wp-content/uploads/2022/09/Science-Lab-Chalkboard.jpg">
+      </div>
+  </div>
+  <div class="color-box" style="margin:10px; border-radius:8px; transform:translateY(-10px); backdrop-filter:blur(40px); width:300px; background:linear-gradient(90deg, rgb(244, 107, 105), rgb(255, 0, 0));">
+    <div class="container" style="text-align:center";>
+      <dl style="color:#ffffff;">
+        <dt style="font-family:'Roboto'; font-size:32px;">Mathematics</dt>
+        <dd style="font-size:20px;">•Algebra</dd>
+        <dd style="font-size:20px;">•Pre-calculus</dd>
+        <dd style="font-size:20px;">•Calculus 1,2,3</dd>
+        <dd style="font-size:20px;">•Linear Algebra</dd>
+        <dd style="font-size:20px;">•Differential equations</dd>
+        <dd style="font-size:20px;">•Set theory</dd>
+      </dl>
+      </div>
     </div>
   </div>
-
-  <h1 style="font-size:54px; text-align:center; font-family:'courier'"><b>Testimonials</b></h1>
+  </div>
+  </div>
+  </div>
+  </div class="bigcontainer2">
+  <div class="testmposition">
+  <h1 style="font-size:54px; text-align:center; font-family:'Roboto'; color:white;"><b>Testimonials</b></h1>
+  </div>
   <div class="box">
     <a><span>Joshua Cline.</span> UC Merced.</a>
     <br/>
@@ -364,27 +609,22 @@ img {
     <br/>
     <q style="font-size:20px;">Aldo is a great physics tutor! He is clear and his mastery of all concepts related to physics makes learning physics really easy and simple for me!.</q>
   </div>
-
-  <h1 style="text-align:center;font-size:54px; font-family:'Courier'"><b>Get started now!</b></h1>
-  <h2 style="text-align: center;font-size:24px">You can book a 15 minute long consultation to discuss goals and learning needs, free of charge</h2>
-  <button class="button" style="margin:8px; transform:translate(-20px,-40px);">Book free consultation</button>
-
-  <div class="ulmobile">
-    <ul>
-      <li><a href="index.html" style="font-family:'Helvetica';">Home</a></li>
-      <li><a href="about.html" style="font-family:'Helvetica';">About</a></li>
-      <li><a href="contact.html" style="font-family:'Helvetica';">Send me a message</a></li>
-      <li><a href="booksession.html" style="font-family:'Helvetica';">Book a lesson</a></li>
-    </ul>
   </div>
-  <ul>
-    <li><a href="mailto:aldon2004@hotmail.com" style="font-size:18px;">Send me an email</a></li>
-    <li><a href="www.linkedin.com/in/aldo-mayme-martinez" style="font-size:18px;">Linkedin</a></li>
-    <li><a href="https://www.reddit.com/user/Glittering_Report_82/" style="font-size:18px;">Reddit</a></li>
-    <li><a class="active" href="index-es.html" style="font-size:18px;">Español</a></li>
-    <li><a>©2026, Aldo Mayme</a></li>
+  <div class="buttonconsult">
+  <h1 style="text-align:center;font-size:54px; font-family:'Roboto'; color:white;"><b>Get started now!</b></h1>
+  <h2 style="text-align: center;font-size:24px; color:white;">You can book a 15 minute long consultation to discuss goals and learning needs, free of charge</h2>
+  <a href="https://calendly.com/aldon2004/new-meeting" class="button">Book a free consultation</a>
+  <div class="foot">
+  <ul style="text-align:center;">
+    <li><a href="mailto:aldon2004@hotmail.com" style="font-size:20px; color:white;">Send me an email</a></li>
+    <li><a href="https://www.linkedin.com/in/aldo-mayme-martinez" style="font-size:20px; color:white;">Linkedin</a></li>
+    <li><a href="https://www.reddit.com/user/Glittering_Report_82/" style="font-size:20px; color:white;">Reddit</a></li>
+    <li><a class="active" href="index-es.html" style="font-size:20px; color:white;">Español</a></li>
+    <li><a style="color:white; font-size:20px;">©2026, Aldo Mayme</a></li>
   </ul>
-
+</div>
+  </div>
+  <hr>
   <script>
     const btn = document.getElementById('hamburgerBtn');
     const menu = document.getElementById('mobileMenu');
@@ -403,5 +643,6 @@ img {
       });
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
