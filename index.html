@@ -26,7 +26,7 @@
       --transition: 0.35s cubic-bezier(.4,0,.2,1);
     }
 
-    /* ─── Base (original preserved) ────────────────────────── */
+    /* ─── Base ────────────────────────────────────────────── */
     body {
       font-family: 'DM Sans', sans-serif;
       line-height: 1.6;
@@ -39,7 +39,6 @@
       background-attachment: fixed;
     }
 
-    /* ─── Original .foot ──────────────────────────────────── */
     .foot {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       border-top: 1px solid var(--border);
@@ -49,7 +48,6 @@
       padding: 32px 0 20px;
     }
 
-    /* ─── Original a.button ────────────────────────────────── */
     a.button {
       background: linear-gradient(135deg, #0d6efd, #0099cc);
       border: gold 2px solid;
@@ -87,7 +85,6 @@
       box-shadow: 0 8px 32px rgba(13,110,253,0.5);
     }
 
-    /* ─── Original .hamburger ──────────────────────────────── */
     .hamburger {
       display: none;
       font-size: 32px;
@@ -100,7 +97,6 @@
       z-index: 1100;
     }
 
-    /* ─── Original .bigcontainer ───────────────────────────── */
     .bigcontainer {
       display: grid;
       grid-template-columns: auto auto auto;
@@ -117,7 +113,6 @@
       justify-content: space-between;
     }
 
-    /* ─── Original .glasscontainer ─────────────────────────── */
     .glasscontainer {
       height: 160px;
       width: 1000px;
@@ -166,7 +161,6 @@
 
     .mbutton { display: none; }
 
-    /* ─── Original .container ──────────────────────────────── */
     .container {
       display: grid;
       align-items: center;
@@ -174,7 +168,7 @@
       column-gap: 5px;
     }
 
-    /* ─── Original .box ─────────────────────────────────────── */
+    /* ─── Testimonials: OLD .box (kept for reference, overridden below) ── */
     .box {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -214,13 +208,11 @@
       margin-right: 15px;
     }
 
-    /* ─── Original .subjectcards ───────────────────────────── */
     .subjectcards {
       display: flex;
       flex-direction: row;
     }
 
-    /* ─── Original p ────────────────────────────────────────── */
     p {
       position: relative;
       width: 1000px;
@@ -241,7 +233,6 @@
 
     li { padding: 5px; }
 
-    /* ─── Original .bgr ─────────────────────────────────────── */
     .bgr {
       width: 360px;
       height: 65px;
@@ -260,7 +251,6 @@
       box-shadow: 0 0 0 4px rgba(0,200,255,0.25), 0 8px 32px rgba(0,0,0,0.5);
     }
 
-    /* ─── Original .topnav ─────────────────────────────────── */
     .topnav {
       background-color: white;
       overflow: hidden;
@@ -300,7 +290,6 @@
       margin: 16px auto;
     }
 
-    /* ─── Original #navbar ─────────────────────────────────── */
     #navbar {
       position: sticky;
       top: 0; right: 0;
@@ -327,7 +316,6 @@
     #a { text-align: center; }
     #btn { position: fixed; top: 200px; right: 500px; }
 
-    /* ─── Original .mobile-menu ────────────────────────────── */
     .mobile-menu {
       display: none;
       flex-direction: column;
@@ -360,7 +348,6 @@
 
     .mobile-menu.open { display: flex; }
 
-    /* ─── Original #header ─────────────────────────────────── */
     #header {
       display: flex;
       align-items: center;
@@ -374,10 +361,7 @@
       padding: 5px;
     }
 
-    /* ─────────────────────────────────────────────────────── */
-    /* ADDED-ONLY styles below                                 */
-    /* ─────────────────────────────────────────────────────── */
-
+    /* ─── Added styles ──────────────────────────────────────── */
     .hero-section { position: relative; padding: 20px 12px 0; }
 
     .hero-badge {
@@ -421,7 +405,6 @@
       to   { opacity:1; transform:translateY(0); }
     }
 
-    /* Stats bar */
     .stats-bar {
       display: flex;
       gap: 12px;
@@ -573,7 +556,128 @@
       margin: 24px 0;
     }
 
-    /* ─── Original media query (preserved) ─────────────────── */
+    /* ─── TESTIMONIALS HORIZONTAL SCROLL ───────────────────── */
+    .testimonials-wrapper {
+      position: relative;
+      margin: 0 0 32px;
+    }
+
+    /* Fade edges */
+    .testimonials-wrapper::before,
+    .testimonials-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .testimonials-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, rgb(48,47,47), transparent);
+    }
+
+    .testimonials-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, rgb(48,47,47), transparent);
+    }
+
+    .testimonials-track {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      overflow-x: auto;
+      overflow-y: visible;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 16px 80px 24px;
+      cursor: grab;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0,200,255,0.35) transparent;
+    }
+
+    .testimonials-track:active { cursor: grabbing; }
+
+    .testimonials-track::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .testimonials-track::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .testimonials-track::-webkit-scrollbar-thumb {
+      background: rgba(0,200,255,0.35);
+      border-radius: 99px;
+    }
+
+    /* Override old .box styles inside the track */
+    .testimonials-track .box {
+      flex: 0 0 420px;
+      width: 420px;
+      transform: none !important;
+      scroll-snap-align: center;
+      margin: 0;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonials-track .box:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 40px rgba(0,200,255,0.18);
+    }
+
+    /* Scroll hint arrows */
+    .scroll-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .scroll-btn {
+      background: rgba(0,200,255,0.10);
+      border: 1px solid rgba(0,200,255,0.30);
+      color: var(--accent);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s, transform 0.2s;
+      user-select: none;
+    }
+
+    .scroll-btn:hover {
+      background: rgba(0,200,255,0.22);
+      transform: scale(1.08);
+    }
+
+    /* Dot indicators */
+    .scroll-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .scroll-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .scroll-dot.active {
+      background: var(--accent);
+      transform: scale(1.4);
+    }
+
+    /* ─── Media queries (original preserved + testimonial overrides) ── */
     @media screen and (max-width: 1000px) {
       body { overflow-x: hidden; }
 
@@ -644,12 +748,15 @@
       .testmposition { transform: none; width: 100%; text-align: center; }
       .testmposition h1 { font-size: 36px !important; }
 
-      .box {
-        width: calc(100% - 32px);
-        transform: none; margin: 12px auto; box-sizing: border-box;
+      /* Mobile: narrower cards in the track */
+      .testimonials-track .box {
+        flex: 0 0 85vw;
+        width: 85vw;
       }
 
-      .box:hover { transform: translateY(-3px); }
+      .testimonials-track {
+        padding: 16px 20px 24px;
+      }
 
       .buttonconsult { width: 100%; padding: 0 16px; box-sizing: border-box; }
       .buttonconsult h1 { font-size: 36px !important; }
@@ -736,7 +843,7 @@
   <!-- Original CTA button -->
   <a href="https://calendly.com/aldon2004/new-meeting" class="button">Book a free consultation</a>
 
-  <!-- Stats bar (added) -->
+  <!-- Stats bar -->
   <div class="stats-bar reveal">
     <div class="stat-item">
       <div class="stat-number">50+</div>
@@ -806,31 +913,60 @@
       </div>
     </div>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS – horizontal scroll -->
     <div class="testmposition">
       <span class="section-eyebrow" style="text-align:center; display:block; margin-bottom:6px;">What students say</span>
       <h1 style="font-size:54px; text-align:center; font-family:'Playfair Display','Roboto'; color:white;"><b>Testimonials</b></h1>
     </div>
 
-    <div class="box reveal">
-      <div class="star-rating">★★★★★</div>
-      <a><span>Luis Contreras</span> California</a>
-      <br/>
-      <q style="font-size:20px;">Aldo tutored my highschool daughter in physics. He is very patient and knowledgeable.
-      <br>
-        Very accomodating and is able to explain difficult concepts. I was extremely happy with the results
-        <br>
-        and would highly recommend.
-      </q>
-      <div class="testimonial-meta">Physics · AP Level</div>
-    </div>
+    <div class="testimonials-wrapper reveal">
+      <div class="testimonials-track" id="testimonialsTrack">
 
-    <div class="box reveal">
-      <div class="star-rating">★★★★★</div>
-      <a><span>Rob Parker.</span> New York.</a>
-      <br/>
-      <q style="font-size:20px;">Aldo is a great physics tutor! He is clear and his mastery of all concepts related to physics makes learning physics really easy and simple for me!</q>
-      <div class="testimonial-meta">Physics · College Level</div>
+        <div class="box">
+          <div class="star-rating">★★★★★</div>
+          <a><span>Luis Contreras</span> California.</a>
+          <br/>
+          <q style="font-size:20px;">Aldo tutored my highschool daughter in physics. He is very patient and knowledgeable.
+            <br>
+            Very accommodating and is able to communicate and explain difficult concepts. 
+            <br>
+            I was extremely happy with the results and would highly recommend</q>
+          <div class="testimonial-meta">Physics · AP Level</div>
+        </div>
+
+        <div class="box">
+          <div class="star-rating">★★★★★</div>
+          <a><span>Rob Parker.</span> New York.</a>
+          <br/>
+          <q style="font-size:20px;">Aldo is a great physics tutor! He is clear and his mastery of all concepts related to physics makes learning physics really easy and simple for me!</q>
+          <div class="testimonial-meta">Physics · College Level</div>
+        </div>
+
+        <!-- Placeholder cards so scrolling is obvious — remove/replace as needed -->
+        <div class="box">
+          <div class="star-rating">★★★★★</div>
+          <a><span>Maria G.</span> Los Angeles.</a>
+          <br/>
+          <q style="font-size:20px;">My calculus grade went from a C to an A in just one month. Aldo explains everything step by step and never makes you feel rushed.</q>
+          <div class="testimonial-meta">Mathematics · Calculus 2</div>
+        </div>
+
+        <div class="box">
+          <div class="star-rating">★★★★★</div>
+          <a><span>Daniel H.</span> Chicago.</a>
+          <br/>
+          <q style="font-size:20px;">Best STEM tutor I've ever worked with. He customised every session to exactly what I needed and was incredibly patient throughout.</q>
+          <div class="testimonial-meta">Physics · Classical Mechanics</div>
+        </div>
+
+      </div>
+
+      <!-- Navigation controls -->
+      <div class="scroll-nav">
+        <button class="scroll-btn" id="scrollLeft" aria-label="Scroll left">&#8592;</button>
+        <button class="scroll-btn" id="scrollRight" aria-label="Scroll right">&#8594;</button>
+      </div>
+      <div class="scroll-dots" id="scrollDots"></div>
     </div>
 
   </div>
@@ -857,7 +993,7 @@
   <hr>
 
   <script>
-    /* Original hamburger logic */
+    /* Hamburger */
     const btn = document.getElementById('hamburgerBtn');
     const menu = document.getElementById('mobileMenu');
 
@@ -910,6 +1046,75 @@
       });
     }, { threshold: 0.5 });
     counters.forEach(el => counterObserver.observe(el));
+
+    /* ─── Testimonials carousel ─────────────────────────── */
+    (function () {
+      const track = document.getElementById('testimonialsTrack');
+      const cards = track.querySelectorAll('.box');
+      const dotsContainer = document.getElementById('scrollDots');
+      const btnLeft  = document.getElementById('scrollLeft');
+      const btnRight = document.getElementById('scrollRight');
+
+      // Build dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'scroll-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        dot.addEventListener('click', () => scrollToCard(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function getCardWidth() {
+        return cards[0].offsetWidth + 20; // gap
+      }
+
+      function currentIndex() {
+        return Math.round(track.scrollLeft / getCardWidth());
+      }
+
+      function scrollToCard(idx) {
+        idx = Math.max(0, Math.min(idx, cards.length - 1));
+        track.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+      }
+
+      function updateDots() {
+        const idx = currentIndex();
+        dotsContainer.querySelectorAll('.scroll-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+
+      btnLeft.addEventListener('click',  () => scrollToCard(currentIndex() - 1));
+      btnRight.addEventListener('click', () => scrollToCard(currentIndex() + 1));
+
+      track.addEventListener('scroll', updateDots, { passive: true });
+
+      /* Drag-to-scroll (mouse) */
+      let isDown = false, startX, scrollStart;
+
+      track.addEventListener('mousedown', e => {
+        isDown = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollStart = track.scrollLeft;
+        track.style.userSelect = 'none';
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        track.style.userSelect = '';
+        // Snap to nearest card on release
+        scrollToCard(currentIndex());
+      });
+
+      document.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        track.scrollLeft = scrollStart - walk;
+      });
+    })();
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
